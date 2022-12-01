@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdint.h>
+#include <stddef.h>
 
 static void ConsumeLine(size_t tableSpaces,char *line)
 {
