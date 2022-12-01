@@ -171,7 +171,7 @@ int main(int argc,char const *argv[])
             }
         }
         puts("\n\t],");
-        puts("\tdescription: \"\"");
+        puts("\t\"description\": \"\"");
         puts("}");
     } while(0);
     if(fp)
