@@ -9,10 +9,10 @@ if(MSVC)
     add_definitions("-D_CRT_SECURE_NO_WARNINGS=1")
 endif()
 
-add_executable(CodeSnippetGeneraion ${src})
+add_executable(CodeSnippetGenerator ${src})
 
 if(UNIX)
     set(THREADS_PREFER_PTHREAD_FLAG ON)
     find_package(Threads REQUIRED)
-    target_link_libraries(CodeSnippetGeneraion PUBLIC Threads::Threads)
+    target_link_libraries(CodeSnippetGenerator PUBLIC Threads::Threads)
 endif()

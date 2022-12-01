@@ -1,3 +1,3 @@
-# Code Snippet Generation
+# Code Snippet Generator
 
-A vscode code snippet generation
+A vscode code snippet generator
