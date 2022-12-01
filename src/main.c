@@ -119,7 +119,8 @@ int main(int argc,char const *argv[])
         if(endLine)
         {
             putchar('\n');
-            for(size_t i = beginLine,end = endLine + 1; i != end && !feof(fp); ++i)
+            int eof = 0;
+            for(size_t i = beginLine,end = endLine + 1; i != end && !eof; ++i)
             {
                 fputs("\t\t",stdout);
                 char *line = fgets(buf,(int)bufSize,fp);
@@ -132,6 +133,14 @@ int main(int argc,char const *argv[])
                 if(!feof(fp))
                 {
                     ConsumeLine(tableSpaces,buf);
+                }
+                else
+                {
+                    if(line)
+                    {
+                        ConsumeLine(tableSpaces,buf);
+                    }
+                    eof = 1;
                 }
                 if(i != endLine)
                 {
@@ -153,9 +162,9 @@ int main(int argc,char const *argv[])
                 break;
             }
             size_t i = 1;
-            while(!feof(fp))
+            while(line)
             {
-                fputs("\n\t\t",stdout);
+                fputs(",\n\t\t",stdout);
                 ConsumeLine(tableSpaces,buf);
                 i += 1;
                 line = fgets(buf,(int)bufSize,fp);
